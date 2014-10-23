@@ -11,7 +11,7 @@
 
 #include "Drawable.hpp"
 
-#include <cv.h>
+#include <opencv2/opencv.hpp>
 
 #include <iostream>
 
@@ -30,7 +30,7 @@ public:
 
 	virtual ~Ellipse() {}
 
-	virtual void draw(cv::Mat & image, CvScalar color, int offsetX = 0, int offsetY = 0) {
+	virtual void draw(cv::Mat & image, cv::Scalar color, int offsetX = 0, int offsetY = 0) {
 		//cv::ellipse(image, rect_, color);
 		cv::ellipse(image, cv::Point(rect_.center.x, rect_.center.y), cv::Size(rect_.size.width, rect_.size.height), rect_.angle, 0, 360, getCol(), 2);
 		//cv::ellipse(image, rect_, getCol(), 2);
